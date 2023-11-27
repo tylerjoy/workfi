@@ -8,15 +8,13 @@ const searchController = require("../controllers/search");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Post Routes - simplified for now
-// router.get("/:id", ensureAuth, postsController.getPost);
-
-// router.get("/:id", ensureAuth, postsController.getPost);
 
 router.post("/createSearch", searchController.createSearch);
 
 
-// router.put("/likePost/:id", postsController.likePost);
 
+// router.get("/:id", ensureAuth, postsController.getPost);
+// router.put("/likePost/:id", postsController.likePost);
 // router.delete("/deletePost/:id", postsController.deletePost);
 
 module.exports = router;

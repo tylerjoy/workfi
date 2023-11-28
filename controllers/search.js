@@ -23,8 +23,9 @@ module.exports = {
           .then(result=> {
             console.log('search result======>:', (result))
             console.log('above average only search result======>:', (result.above_average))
-          
-            res.render("searchResult.ejs", { searchResult: result.above_average.state , user: req.user  });
+            console.log(`IS ARRAY? ========?${Array.isArray(result.above_average.state)}`)
+            res.render("searchResult.ejs", { dataFromApi: result.above_average.state , user: req.user  });          
+            // res.render("searchResult.ejs", { dataFromApi: JSON.stringify(result.above_average.state, null, 2) , user: req.user  });
           })
       } catch(error) {
         console.error('Error', error.message)

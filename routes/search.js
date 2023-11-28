@@ -9,7 +9,16 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Post Routes - simplified for now
 
-router.post("/createSearch", searchController.createSearch);
+// router.get("/jobData", ensureAuth, searchController.getJobData);
+
+
+
+// router.post("/createSearch", searchController.createSearch);
+router.get("/getJobData", searchController.getJobData);
+
+
+
+// router.get("/:id", ensureAuth, searchController.getSearchResult);
 
 
 

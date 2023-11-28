@@ -35,10 +35,12 @@ async function searchJobs(jobCode) {
       //all states
     // console.log(JSON.stringify(response.data, null, 2));
       //only above-average states
-    console.log(JSON.stringify(response.data.above_average.state, null, 2));
 
-  
-    return JSON.stringify(response.data, null, 2)
+
+    // console.log(JSON.stringify(response.data.above_average.state, null, 2));
+
+    // return JSON.stringify(response.data, null, 2)
+    return response.data
 
   } catch (error) {
     // Handle errors, if any

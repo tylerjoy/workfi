@@ -10,11 +10,16 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 //Main Routes - simplified for now
 router.get("/", homeController.getIndex, );
 router.get("/autocomplete", autoCompleteController.getAutoComplete)
-router.post("/search", searchController.postJobCode)
+// router.post("/search", searchController.postJobCode)
 // router.get("/searchResults", searchController.getSearchResults);
 // router.get("/search?jobCode=:jobCode", searchController.getJobSearch);
-router.get("/profile", ensureAuth, postsController.getProfile);
+
+// router.get("/profile", ensureAuth, postsController.getProfile);
+router.get("/profile", ensureAuth, searchController.getProfile);
 // router.get("/searchProfile", ensureAuth, searchController.getsearchProfile);
+
+
+
 router.get("/feed", ensureAuth, postsController.getFeed);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);

@@ -17,7 +17,18 @@ const SearchSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  searchResult: [
+    {
+      postal_code: String,
+      location_quotient: Number,
+      name: String,
+    }
+  ],
+  // searchResult:{
+  //   type: Array,
+  // } 
 });
+
 
 const Search = mongoose.model("Search", SearchSchema)
 

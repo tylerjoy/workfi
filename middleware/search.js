@@ -1,4 +1,7 @@
+require("dotenv").config({ path: "./config/.env" });
 const axios = require('axios');
+
+
 
 function findJobCode(searchTerm) {
   // Assuming jobs is a global variable or accessible in this scope
@@ -12,33 +15,25 @@ function findJobCode(searchTerm) {
   }
 }
 
+
 async function searchJobs(jobCode) {
-
   try {
-
     const apiEndpoint = `https://services.onetcenter.org/ws/mnm/careers/${jobCode}/check_out_my_state`;
-    
     // Replace 'YOUR_API_TOKEN' with your actual API token
     const apiToken = process.env.CHECK_STATE_TOKEN;
-
     // Set up the headers with Authorization
     const headers = {
       // Authorization: `Basic ${Buffer.from(apiToken).toString('base64')}`,
       Authorization: `Basic ${apiToken}`,
     };
-
     // Make a GET request to the API endpoint with the specified headers
     // console.log(apiEndpoint, headers)
     const response = await axios.get(apiEndpoint, { headers });
-
     // Log the JSON data to the console
       //all states
     // console.log(JSON.stringify(response.data, null, 2));
       //only above-average states
-
-
     // console.log(JSON.stringify(response.data.above_average.state, null, 2));
-
     // return JSON.stringify(response.data, null, 2)
     return response.data
 
@@ -48,10 +43,114 @@ async function searchJobs(jobCode) {
   }
 }
 
+
+
+
+
+
+
+async function getRentData(arr) {
+  const rentApiToken = 
+ // Replace with your actual API token
+
+  // const rentApiToken = process.env.RENT_API_TOKEN;
+
+  const fetchData = async (v) => {
+    try {
+      const apiEndpoint = `https://www.huduser.gov/hudapi/public/fmr/statedata/${v}`;
+      const headers = {
+        Authorization: `Bearer ${rentApiToken}`,
+      };
+
+      // Make a GET request to the API endpoint with the specified headers
+      const response = await axios.get(apiEndpoint, { headers });
+
+      // Log the response for debugging
+      console.log(`RESPONSE FOR ${v}:=============>`, response.data);
+
+      // Return the data from the API response
+      return response.data;
+    } catch (error) {
+      // Handle errors, if any
+      console.error(`Error fetching data for ${v} from the API =============>:`, error.message);
+      
+      // Return a default or placeholder value if needed
+      return null;
+    }
+  };
+
+  try {
+    // Use Promise.all to wait for all the async calls to complete
+    const resolvedValues = [] 
+
+    for (const v of arr) {
+      await new Promise((resolve) => setTimeout(resolve, 500))
+      const data = await fetchData(v);
+      resolvedValues.push(data)
+    }
+    
+    // await new Promise.all(arr.map(fetchData));
+
+    // Output the results
+    resolvedValues.forEach((value) => {
+      console.log(JSON.stringify(value));
+    });
+
+    return resolvedValues.filter(value => value !== null); // Return the data if needed, filtering out null values
+  } catch (error) {
+    // Handle errors from Promise.all
+    console.error('Error in Promise.all:', error.message);
+  }
+}
+
+// Example usage
+getRentData(['WA', 'OR']).then((data) => {
+  console.log(`RETURNED FROM GET RENT DATA ===========>${data.length}`)
+  stringData = JSON.stringify(data).replaceAll('-','_')
+  obj = JSON.parse(stringData)
+
+    obj.forEach(state=> {
+      console.log(state.data.metroareas)
+    })
+  // metroAreas = data.metroareas
+  //   metroTwoBrRent = metroAreas.map(e=> e['Two-Bedroom'])
+  //   let metroTwoBrTotal = 0
+  //   for(let i in metroTwoBrRent){
+  //     metroTwoBrTotal += parseInt(metroTwoBrRent[i])
+  //   }
+  //   // avgRent = sum(studioRent) / metroAreas.length
+  //   console.log(`RETURNED FROM GET METRO RENT TWO BR ===========>${metroTwoBrTotal / metroTwoBrRent.length}`)
+  //   // console.log(`RETURNED FROM GET METRO RENT TWO BR ===========>${data}`)
+  // dataString = JSON.stringify(data, null, 2)
+  // console.log(`RETURNED FROM GET RENT DATA ===========>${dataString.length}`)
+
+  // obj = JSON.parse(dataString)
+  // console.log(`JSON PARSE RESPONSE DATA===========>${obj.length}`)
+
+  // metroAreas = obj.metroAreas
+  // console.log(`JSON PARSE RESPONSE DATA===========>${metroAreas}`)
+});
+// 
+
+// console.log(process.env.Authorization)
+
+// getRentData(['WA', 'OR', 'CA'])
+
+// console.log(`SEARCHJOBS RESPONSEDATA=========>${searchJobs(15-1253.00)}`)
+
+
+
+
 module.exports = {
     findJobCode,
     searchJobs,
 };
+
+
+
+
+
+
 
 const jobs = 
 [

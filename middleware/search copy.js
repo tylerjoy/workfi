@@ -1,6 +1,8 @@
 require("dotenv").config({ path: "./config/.env" });
 const axios = require('axios');
 
+
+
 function findJobCode(searchTerm) {
   // Assuming jobs is a global variable or accessible in this scope
   const job = jobs.find(job => job.jobtitle === searchTerm);
@@ -43,7 +45,13 @@ async function searchJobs(jobCode) {
 
 
 
+
+
+
+
 async function getRentData(arr) {
+  // const rentApiToken = 
+  // 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjQ0YzliYTdiYjA3OTA1NmMwZjBkYWRkYjRkOTVkMTMwYzA5MzU0ZDRhNGZhZTNkYmVmMmMyN2Y0MjMyYWNhNWFhZTdiNmZhYTBjY2JkMzUxIn0.eyJhdWQiOiI2IiwianRpIjoiNDRjOWJhN2JiMDc5MDU2YzBmMGRhZGRiNGQ5NWQxMzBjMDkzNTRkNGE0ZmFlM2RiZWYyYzI3ZjQyMzJhY2E1YWFlN2I2ZmFhMGNjYmQzNTEiLCJpYXQiOjE3MDAzNDIyNTUsIm5iZiI6MTcwMDM0MjI1NSwiZXhwIjoyMDE1OTYxNDU1LCJzdWIiOiI2MTk5OCIsInNjb3BlcyI6W119.JHuXUPCr1kUyiXE-f6V4FXEneIGgVkzJLEHJZGK_rywzk4MbJoIDRR3hUNdYXhCjJNze3pzWiz_TRfgwHo-ehQ'; // Replace with your actual API token
 
   const rentApiToken = process.env.RENT_API_TOKEN;
 
@@ -80,11 +88,13 @@ async function getRentData(arr) {
       const data = await fetchData(v);
       resolvedValues.push(data)
     }
+    
+    // await new Promise.all(arr.map(fetchData));
 
-    // // Output the results
-    // resolvedValues.forEach((value) => {
-    //   console.log(JSON.stringify(value));
-    // });
+    // Output the results
+    resolvedValues.forEach((value) => {
+      console.log(JSON.stringify(value));
+    });
 
     return resolvedValues.filter(value => value !== null); // Return the data if needed, filtering out null values
   } catch (error) {
@@ -94,89 +104,39 @@ async function getRentData(arr) {
 }
 
 // Example usage
-getRentData(['WA', 'OR', 'NM']).then((data) => {
-  console.log(`RETURNED FROM GET RENT DATA ===========>${data.length}`);
-  const stringData = JSON.stringify(data).replaceAll('-', '_');
-  const obj = JSON.parse(stringData);
+getRentData(['WA', 'OR']).then((data) => {
+  console.log(`RETURNED FROM GET RENT DATA ===========>${data.length}`)
+  stringData = JSON.stringify(data).replaceAll('-','_')
+  obj = JSON.parse(stringData)
 
-  // console.log(JSON.stringify(obj))
-  console.log(obj)
+    obj.forEach(state=> {
+      console.log(state.data.metroareas)
+    })
+  // metroAreas = data.metroareas
+  //   metroTwoBrRent = metroAreas.map(e=> e['Two-Bedroom'])
+  //   let metroTwoBrTotal = 0
+  //   for(let i in metroTwoBrRent){
+  //     metroTwoBrTotal += parseInt(metroTwoBrRent[i])
+  //   }
+  //   // avgRent = sum(studioRent) / metroAreas.length
+  //   console.log(`RETURNED FROM GET METRO RENT TWO BR ===========>${metroTwoBrTotal / metroTwoBrRent.length}`)
+  //   // console.log(`RETURNED FROM GET METRO RENT TWO BR ===========>${data}`)
+  // dataString = JSON.stringify(data, null, 2)
+  // console.log(`RETURNED FROM GET RENT DATA ===========>${dataString.length}`)
 
-  // Create an object to store total cost and count for each state
-  // const stateAverages = Object.fromEntries(['WA', 'OR', 'NM'].map(k => [k, '']));;
-  // console.log(`STATE AVG OBJECT ${JSON.stringify(stateAverages)}`)
+  // obj = JSON.parse(dataString)
+  // console.log(`JSON PARSE RESPONSE DATA===========>${obj.length}`)
 
-  obj.forEach((state) => {
-    // console.log(`OBJ FOERACH STATE==========? ${JSON.stringify(state.data.metroareas)}`)
-    // state.data.metroareas.forEach((e=> {console.log(e.statecode)}))
-    // Initialize total cost and count for the state
-    let totalTwoBedroomCost = 0;
-    let totalMetroAreas = 0;
-
-    state.data.metroareas.forEach((metro) => {
-      // Access the Two_Bedroom property and add its value to the total
-      totalTwoBedroomCost += metro.Two_Bedroom;
-      totalMetroAreas += 1;
-    });
-    // Calculate the average cost for Two_Bedroom in the state
-    const averageTwoBedroomCost = totalTwoBedroomCost / totalMetroAreas;
-    console.log(averageTwoBedroomCost)
-
-    // Store the average in the stateAverages object
-    // stateAverages[state.data.statecode] = averageTwoBedroomCost;
-  });
-
-  // Output the state averages
-  // console.log('State Averages for Two-Bedroom:');
-  // for (const stateCode in stateAverages) {
-  //   console.log(`${stateCode}: ${stateAverages[stateCode]}`);
-  // }
+  // metroAreas = obj.metroAreas
+  // console.log(`JSON PARSE RESPONSE DATA===========>${metroAreas}`)
 });
+// 
 
-// getRentData(['WA', 'OR'])
+// console.log(process.env.Authorization)
 
+// getRentData(['WA', 'OR', 'CA'])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Example usage
-// getRentData(['WA']).then((data) => {
-//   console.log(`RETURNED FROM GET RENT DATA ===========>${data.length}`);
-//   const stringData = JSON.stringify(data).replaceAll('-', '_');
-//   const obj = JSON.parse(stringData);
-
-//   let totalTwoBedroomCost = 0;
-//   let totalMetroAreas = 0;
-
-//   obj.forEach((state) => {
-//     state.data.metroareas.forEach((metro) => {
-//       console.log(metro);
-//       // Access the Two_Bedroom property and add its value to the total
-//       totalTwoBedroomCost += metro.Two_Bedroom;
-//       totalMetroAreas += 1;
-//     });
-//   });
-
-//   // Calculate the average cost for Two_Bedroom
-//   const averageTwoBedroomCost = totalTwoBedroomCost / totalMetroAreas;
-
-//   console.log(`Average Cost for Two-Bedroom: ${averageTwoBedroomCost}`);
-// });
-  
-
+// console.log(`SEARCHJOBS RESPONSEDATA=========>${searchJobs(15-1253.00)}`)
 
 
 
@@ -184,7 +144,6 @@ getRentData(['WA', 'OR', 'NM']).then((data) => {
 module.exports = {
     findJobCode,
     searchJobs,
-    getRentData,
 };
 
 

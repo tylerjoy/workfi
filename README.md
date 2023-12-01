@@ -154,6 +154,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 - [x] Pagnate API response to three until search times improve (currently 2 second wait time per state resulting in 20+ second wait times for large return object)
+- [ ] Host website once search is pagnated
+- [ ] Add ciitation / credit to ONET per licensing requirements
 - [ ] Increase search times by adding 'local' database storage models for state-specific average rent data using mongoose
 - [ ] Implement feature to save users seaches upon post request (button click)
 - [ ] Refactor autocomplete feature to query from mongoDB

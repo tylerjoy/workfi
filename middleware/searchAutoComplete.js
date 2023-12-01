@@ -1,4 +1,3 @@
-
 function getAutocompleteSuggestions(query) {
   query = query.toLowerCase()
   return suggestions.filter(suggestion => suggestion.toLowerCase().includes(query));

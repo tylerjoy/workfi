@@ -25,10 +25,11 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">workfi</h3>
 
   <p align="center">
-    project_description
+    workfi makes finding jobs and housing easier. Search by entering a job title, and receive a list of states with higher-than-average jobs per capita, and rental costs for each area. 
+<!--  -->
     <br />
     <a href="https://github.com/tylerjoy/workfi"><strong>Explore the docs »</strong></a>
     <br />
@@ -82,7 +83,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 
 
-### Built With
+<!-- ### Built With
 
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
@@ -93,15 +94,14 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these steps.
 
 ### Prerequisites
 
@@ -113,7 +113,10 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a free ONET API Key at [https://services.onetcenter.org/about#onet](https://services.onetcenter.org/about#onet)
+
+2. Get a free HUD API Key at [https://www.huduser.gov/portal/dataset/fmr-api.html](https://www.huduser.gov/portal/dataset/fmr-api.html)
+
 2. Clone the repo
    ```sh
    git clone https://github.com/tylerjoy/workfi.git
@@ -122,16 +125,17 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+4. Enter your API keys in `config.js`
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   const ONET_API_KEY = 'ENTER YOUR API';
+   const HUD_API_KEY = 'ENTER YOUR API';
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- USAGE EXAMPLES -->
+<!-- 
+USAGE EXAMPLES
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
@@ -139,21 +143,19 @@ Use this space to show useful examples of how a project can be used. Additional 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+ -->
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Refactor autocomplete functionality to query from mongoDB
+- [ ] Implement functionality to save users seachers upon post request (button click)
+- [ ] Increase search times by adding 'local' database storage models for state-specific average rent data using mongoose
 
 See the [open issues](https://github.com/tylerjoy/workfi/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTRIBUTING -->
@@ -186,7 +188,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - [@__tylerJS__](https://twitter.com/__tylerJS__) - mrjoy206@gmail.com
 
 Project Link: [https://github.com/tylerjoy/workfi](https://github.com/tylerjoy/workfi)
 
@@ -197,9 +199,9 @@ Project Link: [https://github.com/tylerjoy/workfi](https://github.com/tylerjoy/w
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [](ONET and HUD for the amazing data)
+* [](100Devs community for the support)
+<!-- * []() -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -218,7 +220,7 @@ Project Link: [https://github.com/tylerjoy/workfi](https://github.com/tylerjoy/w
 [license-shield]: https://img.shields.io/github/license/tylerjoy/workfi.svg?style=for-the-badge
 [license-url]: https://github.com/tylerjoy/workfi/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://linkedin.com/in/tyler-joy-m/
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/

@@ -76,8 +76,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="/public/imgs/demo-1.png" alt="Logo" width="600" height="200">
 <img src="/public/imgs/demo-2.png" alt="Logo" width="600" height="200">
+<img src="/public/imgs/demo-1.png" alt="Logo" width="600" height="350">
+
 
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com)

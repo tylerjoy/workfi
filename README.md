@@ -129,8 +129,8 @@ This is an example of how to list things you need to use the software and how to
    <!-- ```js -->
   - PORT = 2121 (can be any port example: 3000)
   - DB_STRING = `your database URI`
-  - ONET_API_KEY = 'your ONET API key';
-  - HUD_API_KEY = 'your HUD API';
+  - ONET_API_KEY = your ONET API key
+  - HUD_API_KEY = your HUD API
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

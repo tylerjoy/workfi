@@ -153,7 +153,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <!-- ROADMAP -->
 ## Roadmap
-- [ ] Pagnate API response to three until search times improve (currently 2 second wait time per state resulting in 20+ second wait times for large return lists)
+- [ ] Pagnate API response to three until search times improve
 - [ ] Increase search times by adding 'local' database storage models for state-specific average rent data using mongoose
 - [ ] Implement feature to save users seaches upon post request (button click)
 - [ ] Refactor autocomplete feature to query from mongoDB
@@ -215,7 +215,7 @@ Project Link: [https://github.com/tylerjoy/workfi](https://github.com/tylerjoy/w
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-<!-- [contributors-shield]: https://img.shields.io/github/contributors/tylerjoy/workfi.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/tylerjoy/workfi.svg?style=for-the-badge
 [contributors-url]: https://github.com/tylerjoy/workfi/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/tylerjoy/workfi.svg?style=for-the-badge
 [forks-url]: https://github.com/tylerjoy/workfi/network/members
@@ -243,4 +243,25 @@ Project Link: [https://github.com/tylerjoy/workfi](https://github.com/tylerjoy/w
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com  -->
+[JQuery-url]: https://jquery.com 
+
+<!-- # Install
+
+`npm install`
+
+---
+
+# Things to add
+
+- Create a `.env` file in config folder and add the following as `key = value`
+  - PORT = 2121 (can be any port example: 3000)
+  - DB_STRING = `your database URI`
+  - CLOUD_NAME = `your cloudinary cloud name`
+  - API_KEY = `your cloudinary api key`
+  - API_SECRET = `your cloudinary api secret`
+
+---
+
+# Run
+
+`npm start` -->

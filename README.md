@@ -125,10 +125,12 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-4. Enter your API keys in `config.js`
+4. Create a `.env` file in config folder and add the following as `key = value`
    ```js
-   const ONET_API_KEY = 'ENTER YOUR API';
-   const HUD_API_KEY = 'ENTER YOUR API';
+  - PORT = 2121 (can be any port example: 3000)
+  - DB_STRING = `your database URI`
+  - ONET_API_KEY = 'your ONET API key';
+  - HUD_API_KEY = 'your HUD API';
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -149,8 +151,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Refactor autocomplete functionality to query from mongoDB
-- [ ] Implement functionality to save users seachers upon post request (button click)
+- [ ] Refactor autocomplete feature to query from mongoDB
+- [ ] Implement feature to save user's seach results upon post request (button click)
 - [ ] Increase search times by adding 'local' database storage models for state-specific average rent data using mongoose
 
 See the [open issues](https://github.com/tylerjoy/workfi/issues) for a full list of proposed features (and known issues).

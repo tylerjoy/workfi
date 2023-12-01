@@ -75,11 +75,19 @@ async function getRentData(arr) {
     // Use Promise.all to wait for all the async calls to complete
     const resolvedValues = [] 
 
-    for (const v of arr) {
+
+    //FIXME: pagnated rent search retults to first three returned stated until rent search is optimized
+    for (const v of arr.slice(0, 3)) {
       await new Promise((resolve) => setTimeout(resolve, 500))
       const data = await fetchData(v);
       resolvedValues.push(data)
     }
+
+    // for (const v of arr) {
+    //   await new Promise((resolve) => setTimeout(resolve, 500))
+    //   const data = await fetchData(v);
+    //   resolvedValues.push(data)
+    // }
 
     // // Output the results
     // resolvedValues.forEach((value) => {

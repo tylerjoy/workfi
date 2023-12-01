@@ -22,10 +22,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/tylerjoy/workfi">
-    <img src="/public/imgs/WorkFi-logo.png" alt="Logo" width="80" height="80">
+    <img src="/public/imgs/WorkFi-logo.png" alt="Logo" width="200" height="80">
   </a>
 
-<h3 align="center">workfi</h3>
+<h3 align="center">WorkFi</h3>
 
   <p align="center">
     WorkFi makes finding jobs and housing easier. Search by entering a job title, and receive a list of states with higher-than-average jobs per capita, and rental costs for each state. 
@@ -48,12 +48,12 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
+    <!-- <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
-    </li>
+    </li> -->
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>

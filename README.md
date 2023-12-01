@@ -9,6 +9,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -114,9 +115,9 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free ONET API Key at [https://services.onetcenter.org/about#onet](https://services.onetcenter.org/about#onet)
+1. Sign up for a free ONET API Key at [https://services.onetcenter.org/about#onet](https://services.onetcenter.org/about#onet)
 
-2. Get a free HUD API Key at [https://www.huduser.gov/portal/dataset/fmr-api.html](https://www.huduser.gov/portal/dataset/fmr-api.html)
+2. Sign up for a free HUD API Key at [https://www.huduser.gov/portal/dataset/fmr-api.html](https://www.huduser.gov/portal/dataset/fmr-api.html)
 
 3. Clone the repo
    ```sh
@@ -152,10 +153,11 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <!-- ROADMAP -->
 ## Roadmap
-
-- [ ] Refactor autocomplete functionality to query from mongoDB
-- [ ] Implement functionality to save users seachers upon post request (button click)
+- [ ] Pagnate API response to three until search times improve (currently 2 second wait time per state resulting in 20+ second wait times for large return lists)
 - [ ] Increase search times by adding 'local' database storage models for state-specific average rent data using mongoose
+- [ ] Implement feature to save users seaches upon post request (button click)
+- [ ] Refactor autocomplete feature to query from mongoDB
+
 
 See the [open issues](https://github.com/tylerjoy/workfi/issues) for a full list of proposed features (and known issues).
 
@@ -181,12 +183,12 @@ Don't forget to give the project a star! Thanks again!
 
 
 <!-- LICENSE -->
-## License
+<!-- ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+ -->
 
 
 <!-- CONTACT -->
@@ -213,7 +215,7 @@ Project Link: [https://github.com/tylerjoy/workfi](https://github.com/tylerjoy/w
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/tylerjoy/workfi.svg?style=for-the-badge
+<!-- [contributors-shield]: https://img.shields.io/github/contributors/tylerjoy/workfi.svg?style=for-the-badge
 [contributors-url]: https://github.com/tylerjoy/workfi/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/tylerjoy/workfi.svg?style=for-the-badge
 [forks-url]: https://github.com/tylerjoy/workfi/network/members
@@ -241,25 +243,4 @@ Project Link: [https://github.com/tylerjoy/workfi](https://github.com/tylerjoy/w
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
-
-<!-- # Install
-
-`npm install`
-
----
-
-# Things to add
-
-- Create a `.env` file in config folder and add the following as `key = value`
-  - PORT = 2121 (can be any port example: 3000)
-  - DB_STRING = `your database URI`
-  - CLOUD_NAME = `your cloudinary cloud name`
-  - API_KEY = `your cloudinary api key`
-  - API_SECRET = `your cloudinary api secret`
-
----
-
-# Run
-
-`npm start` -->
+[JQuery-url]: https://jquery.com  -->

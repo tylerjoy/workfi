@@ -1,3 +1,13 @@
+
+function getAutocompleteSuggestions(query) {
+  query = query.toLowerCase()
+  return suggestions.filter(suggestion => suggestion.toLowerCase().includes(query));
+}
+
+module.exports = {
+  getAutocompleteSuggestions,
+};
+
 const suggestions = [
   'Accountants and Auditors',
   'Actors',
@@ -1015,12 +1025,3 @@ const suggestions = [
   'Word Processors and Typists',
   'Writers and Authors',
   'Zoologists and Wildlife Biologists' ]
-
-function getAutocompleteSuggestions(query) {
-  query = query.toLowerCase()
-  return suggestions.filter(suggestion => suggestion.toLowerCase().includes(query));
-}
-
-module.exports = {
-  getAutocompleteSuggestions,
-};

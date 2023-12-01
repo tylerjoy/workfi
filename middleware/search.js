@@ -76,7 +76,7 @@ async function getRentData(arr) {
     const resolvedValues = [] 
 
     for (const v of arr) {
-      await new Promise((resolve) => setTimeout(resolve, 500))
+      await new Promise((resolve) => setTimeout(resolve, 50))
       const data = await fetchData(v);
       resolvedValues.push(data)
     }
@@ -93,104 +93,11 @@ async function getRentData(arr) {
   }
 }
 
-// Example usage
-getRentData(['WA', 'OR', 'NM']).then((data) => {
-  console.log(`RETURNED FROM GET RENT DATA ===========>${data.length}`);
-  const stringData = JSON.stringify(data).replaceAll('-', '_');
-  const obj = JSON.parse(stringData);
-
-  // console.log(JSON.stringify(obj))
-  console.log(obj)
-
-  // Create an object to store total cost and count for each state
-  // const stateAverages = Object.fromEntries(['WA', 'OR', 'NM'].map(k => [k, '']));;
-  // console.log(`STATE AVG OBJECT ${JSON.stringify(stateAverages)}`)
-
-  obj.forEach((state) => {
-    // console.log(`OBJ FOERACH STATE==========? ${JSON.stringify(state.data.metroareas)}`)
-    // state.data.metroareas.forEach((e=> {console.log(e.statecode)}))
-    // Initialize total cost and count for the state
-    let totalTwoBedroomCost = 0;
-    let totalMetroAreas = 0;
-
-    state.data.metroareas.forEach((metro) => {
-      // Access the Two_Bedroom property and add its value to the total
-      totalTwoBedroomCost += metro.Two_Bedroom;
-      totalMetroAreas += 1;
-    });
-    // Calculate the average cost for Two_Bedroom in the state
-    const averageTwoBedroomCost = totalTwoBedroomCost / totalMetroAreas;
-    console.log(averageTwoBedroomCost)
-
-    // Store the average in the stateAverages object
-    // stateAverages[state.data.statecode] = averageTwoBedroomCost;
-  });
-
-  // Output the state averages
-  // console.log('State Averages for Two-Bedroom:');
-  // for (const stateCode in stateAverages) {
-  //   console.log(`${stateCode}: ${stateAverages[stateCode]}`);
-  // }
-});
-
-// getRentData(['WA', 'OR'])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Example usage
-// getRentData(['WA']).then((data) => {
-//   console.log(`RETURNED FROM GET RENT DATA ===========>${data.length}`);
-//   const stringData = JSON.stringify(data).replaceAll('-', '_');
-//   const obj = JSON.parse(stringData);
-
-//   let totalTwoBedroomCost = 0;
-//   let totalMetroAreas = 0;
-
-//   obj.forEach((state) => {
-//     state.data.metroareas.forEach((metro) => {
-//       console.log(metro);
-//       // Access the Two_Bedroom property and add its value to the total
-//       totalTwoBedroomCost += metro.Two_Bedroom;
-//       totalMetroAreas += 1;
-//     });
-//   });
-
-//   // Calculate the average cost for Two_Bedroom
-//   const averageTwoBedroomCost = totalTwoBedroomCost / totalMetroAreas;
-
-//   console.log(`Average Cost for Two-Bedroom: ${averageTwoBedroomCost}`);
-// });
-  
-
-
-
-
-
 module.exports = {
     findJobCode,
     searchJobs,
     getRentData,
 };
-
-
-
-
-
 
 
 const jobs = 

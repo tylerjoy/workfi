@@ -1,28 +1,23 @@
 <%- include('partials/header') -%>
 <div class="container">
-  <div class="row mt-5">
-      <div class="col-6">
-          <div>
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
-              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
-
-
-
-    <!-- jobs list -->
-      <div class="row mt-5">
-        <h4>States with lots of jobs</h4>
+  <div class="row mt-2">
+      
+    
+    <div class="row">
+        <h4>Above-Average States for <br> <%= jobTitle %> </h4>
+        <p>Number of jobs is determined by Location Quotient. <br> <a href="https://www.bea.gov/help/faq/478">Click here for more info on Location Quotients</a> </p>
         <ul>
           <% dataFromApi.forEach(item => { %>
             <li>
-              <strong>Name:</strong> <%= item.name %>,
+              <strong>State:</strong> <%= item.name %>,
               <strong>Location Quotient:</strong> <%= item.location_quotient %>,
               <strong>Postal Code:</strong> <%= item.postal_code %>
+              <strong>Two BR Rent:</strong> <%= rentPrice[dataFromApi.indexOf(item)] %>
             </li>
           <% }) %>
         </ul>
         <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+          <a class="btn btn-primary" href="/profile">Return to Profile</a>
         </div>  
       </div>  
 

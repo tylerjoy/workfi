@@ -118,18 +118,21 @@ This is an example of how to list things you need to use the software and how to
 
 2. Get a free HUD API Key at [https://www.huduser.gov/portal/dataset/fmr-api.html](https://www.huduser.gov/portal/dataset/fmr-api.html)
 
-2. Clone the repo
+3. Clone the repo
    ```sh
    git clone https://github.com/tylerjoy/workfi.git
    ```
-3. Install NPM packages
+4. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API keys in `config.js`
+<!-- 5. Enter your API keys in `config.js` -->
+5. Create a `.env`in config folder and add the folxlowing as `key = value`
    ```js
-   const ONET_API_KEY = 'ENTER YOUR API';
-   const HUD_API_KEY = 'ENTER YOUR API';
+   . PORT = 5000(can be any unused port)
+   . DB_STRING = your database URI
+   . ONET_API_KEY = ENTER YOUR API
+   . HUD_API_KEY = ENTER YOUR API
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

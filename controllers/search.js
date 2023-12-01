@@ -20,9 +20,8 @@ module.exports = {
         const jobCode = searchMiddleware.findJobCode(searchTerm)
         
         searchMiddleware.searchJobs(jobCode).then(async (result) => {
-          // let aboveAvgStates = result.above_average.state
+          let aboveAvgStates = result.above_average.state
           //FIXME hosted app says result.above_average.state is undefined
-          let aboveAvgStates = result
           let statesToRentArr = aboveAvgStates.map(state => state.postal_code)
     
           let twoBrRentByState = await searchMiddleware.getRentData(statesToRentArr).then((data) => {

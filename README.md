@@ -126,7 +126,7 @@ This is an example of how to list things you need to use the software and how to
    npm install
    ```
 4. Create a `.env` file in config folder and add the following as `key = value`
-   ```js
+   <!-- ```js -->
   - PORT = 2121 (can be any port example: 3000)
   - DB_STRING = `your database URI`
   - ONET_API_KEY = 'your ONET API key';

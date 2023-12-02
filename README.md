@@ -79,7 +79,7 @@
 [![Product Name Screen Shot][product-screenshot]](https://workfi.up.railway.app/)
 
 <img src="/public/imgs/demo-2.png" alt="Logo" width="600" height="200">
-<img src="/public/imgs/demo-1.png" alt="Logo" width="600" height="350">
+<!-- <img src="/public/imgs/demo-1.png" alt="Logo" width="600" height="350"> -->
 
 
 

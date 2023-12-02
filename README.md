@@ -23,7 +23,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/tylerjoy/workfi">
-    <img src="/public/imgs/workfi-logo.png" alt="Logo" width="200" height="80">
+    <img src="/public/imgs/WorkFi-logo.png" alt="Logo" width="200" height="80">
   </a>
 
 <h3 align="center">WorkFi</h3>

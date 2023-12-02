@@ -23,7 +23,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/tylerjoy/workfi">
-    <img src="/public/imgs/WorkFi-logo.png" alt="Logo" width="200" height="80">
+    <img src="/public/imgs/workfi-logo.png" alt="Logo" width="200" height="80">
   </a>
 
 <h3 align="center">WorkFi</h3>
@@ -76,14 +76,14 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+[![Product Name Screen Shot][product-screenshot]](https://workfi.up.railway.app/)
+
 <img src="/public/imgs/demo-2.png" alt="Logo" width="600" height="200">
 <img src="/public/imgs/demo-1.png" alt="Logo" width="600" height="350">
 
 
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description` -->
+<!-- Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description` -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -159,10 +159,10 @@ USAGE EXAMPLES
 <!-- ROADMAP -->
 ## Roadmap
 - [x] Pagnate API response to three until search times improve (currently 2 second wait time per state resulting in 20+ second wait times for large return object)
-- [ ] Fix issue with API failure in production environment (working on local server)
-- [ ] Host website
-- [ ] Add ciitation / credit to ONET per licensing requirements
-- [ ] Increase search times by adding 'local' database storage models for state-specific average rent data using mongoose
+- [x] Fix issue with API failure in production environment (working on local server)
+- [x] Host website
+- [x] Add ciitation / credit to ONET per licensing requirements
+- [ ] Increase search times by adding 'local' database storage models for state-specific rent data
 - [ ] Implement feature to save users seaches upon post request (button click)
 - [ ] Refactor autocomplete feature to query from mongoDB
 - [ ] Handle US terriroties (rent pricing unavail in HUD API)
@@ -236,7 +236,7 @@ Project Link: [https://github.com/tylerjoy/workfi](https://github.com/tylerjoy/w
 [license-url]: https://github.com/tylerjoy/workfi/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/tyler-joy-m/
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: /public/imgs/product-pic.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB

@@ -1,18 +1,22 @@
-<%- include('partials/header') -%>
+<%- include('partials/headerSignedIn') -%>
 <div class="container">
-  <div class="row mt-2">
+  <div class="row mt-2 grid grid-cols-1">
       
     
     <div class="row">
-        <h4>Above-Average States for <br> <%= jobTitle %> </h4>
+        <h4>Above-Average States for <%= jobTitle %> </h4>
         <p>Number of jobs is determined by Location Quotient. <br> <a href="https://www.bea.gov/help/faq/478">Click here for more info on Location Quotients</a> </p>
-        <ul>
+        <ul class="bg-gray-50 text-gray-900 w-3/4 items-center" >
           <% dataFromApi.forEach(item => { %>
             <li>
-              <strong>State:</strong> <%= item.name %>,
-              <strong>Location Quotient:</strong> <%= item.location_quotient %>,
-              <strong>Postal Code:</strong> <%= item.postal_code %>
-              <strong>Two BR Rent:</strong> <%= rentPrice[dataFromApi.indexOf(item)] %>
+              <li>
+                  <%= item.name %>
+              </li>
+              <li class="mb-3">
+                  <strong>Location Quotient:</strong> <%= item.location_quotient %> |
+                  <!-- <strong>Postal Code:</strong> <%= item.postal_code %> -->
+                  <strong>Two BR Rent:</strong> <%= rentPrice[dataFromApi.indexOf(item)] %>
+              </li>
             </li>
           <% }) %>
         </ul>

@@ -25,6 +25,7 @@ app.set("view engine", "ejs");
 
 //Static Folder
 app.use(express.static("public"));
+app.use("/css", express.static("dist"))
 
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));

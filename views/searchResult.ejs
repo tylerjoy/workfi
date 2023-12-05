@@ -1,35 +1,37 @@
 <%- include('partials/headerSignedIn') -%>
-<div class="container">
-  <div class="row mt-2 grid grid-cols-1">
-      
-    
-    <div class="row">
-        <h4>Above-Average States for <%= jobTitle %> </h4>
-        <p>Number of jobs is determined by Location Quotient. <br> <a href="https://www.bea.gov/help/faq/478">Click here for more info on Location Quotients</a> </p>
-        <ul class="bg-gray-50 text-gray-900 w-3/4 items-center" >
-          <% dataFromApi.forEach(item => { %>
-            <li>
-              <li>
-                  <%= item.name %>
-              </li>
-              <li class="mb-3">
-                  <strong>Location Quotient:</strong> <%= item.location_quotient %> |
-                  <!-- <strong>Postal Code:</strong> <%= item.postal_code %> -->
-                  <strong>Two BR Rent:</strong> <%= rentPrice[dataFromApi.indexOf(item)] %>
-              </li>
+<main class="my-5 flex items-center justify-center">
+  <div class="my-5 bg-gray-800 p-8 rounded-lg shadow-md w-[33%]">
+    <div class="grid text-center">
+      <h4 class="text-white text-2xl mb-5">States ranked by popularity for<br> <%= jobTitle %></h4>
+      <p class="text-white text-lg mb-5">Number of jobs is determined by Location Quotient. <br> <a href="https://www.bea.gov/help/faq/478"><strong>Click here</strong> for more info on Location Quotients</a></p>
+      <ul class="grid text-gray-900 items-center border-separate">
+        <% dataFromApi.forEach(item => { %>
+          <div class="mb-5 bg-gray-400 rounded-lg border-2 border-gray-600">
+            <li class="my-5">
+              <%= item.name %>
+              <ul>
+                <li><strong>Location Quotient:</strong> <%= item.location_quotient %></li>
+                <!-- <li><strong>Postal Code:</strong> <%= item.postal_code %></li> -->
+                <li><strong>Two BR Rent:</strong> <%= rentPrice[dataFromApi.indexOf(item)] %></li>
+              </ul>
             </li>
-          <% }) %>
-        </ul>
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/profile">Return to Profile</a>
-          <p style="text-align: center"><a href="https://services.onetcenter.org/" title="This site incorporates information from O*NET Web Services. Click to learn more."><img src="https://www.onetcenter.org/image/link/onet-in-it.svg" style="width: 130px; height: 60px; border: none" alt="O*NET in-it"></a></p>
-            <p>This site incorporates information from <a href="https://services.onetcenter.org/">O*NET Web Services</a> by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). O*NET&reg; is a trademark of USDOL/ETA.</p>
-        </div>  
-      </div>  
+          </div>
+        <% }) %>
+      </ul>
+    </div>
+    <div class="flex items-center justify-content-center">
+      <section class="m-auto items-center justify-content-center w-[70%]">
+        <a class="ml-32 btn btn-primary mb-10" href="/profile">New Search</a>
+        <a href="https://services.onetcenter.org/" title="This site incorporates information from O*NET Web Services. Click to learn more."><img src="https://www.onetcenter.org/image/link/onet-in-it.svg" style="width: 130px; height: 60px; border: none" alt="O*NET in-it"></a>
 
+        <p class="whitespace-normal">
+          This site incorporates information from 
+          <a href="https://services.onetcenter.org/">O*NET Web Services</a>
+          by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA).O*NET&reg; is a trademark of USDOL/ETA.</p>
+      </section>
     </div>
   </div>
-</div>
+</main>
 
 <script src="/script.js"></script>
 <%- include('partials/footer') -%>

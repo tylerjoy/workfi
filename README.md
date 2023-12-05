@@ -78,8 +78,8 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://workfi.up.railway.app/)
 
-<img src="/public/imgs/workfi_search.png" alt="Logo" width="600" height="350">
-<img src="/public/imgs/workfi_results.png" alt="Logo" width="600" height="200">
+<!-- <img src="/public/imgs/workfi_search.png" alt="Logo" width="600" height="350"> -->
+<img src="/public/imgs/workfi_results.png" alt="Logo" width="600" height="400">
 <!-- <img src="/public/imgs/demo-1.png" alt="Logo" width="600" height="350"> -->
 
 
@@ -235,7 +235,7 @@ Project Link: [https://github.com/tylerjoy/workfi](https://github.com/tylerjoy/w
 [license-url]: https://github.com/tylerjoy/workfi/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/tyler-joy-m/
-[product-screenshot]: /public/imgs/product-pic.png
+[product-screenshot]: /public/imgs/workfi_search.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB

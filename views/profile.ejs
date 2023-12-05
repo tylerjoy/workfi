@@ -9,26 +9,26 @@
 
 
     <!-- jobs form -->
-    <div class="grid grid-cols-1 grid-rows-4 text-5xl">
-        <div class="grid w-11/12 justify-center row-span-1">
-          <h2 class="">Search Jobs</h2>
-          <form action="/search/getJobData" method="GET">
-            <div class="mb-3 row-span-2 border-2 justify-center">
-                <label for="search" class="form-label">Job Name</label>
-                <input type="text" class="form-control" id="searchBox" name="search" autocomplete="off">
+    <div class="grid grid-cols-1 grid-rows-4 text-3xl">
+        <div class="grid w-full row-span-1">
+          <!-- <h2 class="m-auto justify-left">What job are you interested in?</h2> -->
+          <form action="/search/getJobData" method="GET" class="m-auto w-5/12">
+            <div class="mb-3 row-span-2">
+                <label for="search" class="form-label">What job are you interested in?</label>
+                <input type="text" class="border-2 rounded-lg border-gray-500 form-control w-full text-3xl" id="searchBox" name="search" autocomplete="off">
             </div>
-            <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-            <div id="autoCompleteResults"></div>
+            <button id="submitButton" type="submit" class="btn btn-primary text-3xl w-36 hidden" value="Upload">Submit</button>
+            <div id="autoCompleteResults" class="bg-gray-800 p-2 rounded-lg invisible text-2xl"></div>
           </form>
 
-          <div class="col-8">
+          <!-- <div class="col-8"> -->
             <!-- FIXME: Add Recent Searches -->
             <!-- <h4>We apologize for the inconvenience. Rental pricing is only available for first three states while search is optimized.</h4> -->
-            <ul class="row list-unstyled">
-            <div class="row justify-content-center mt-5">
+            <!-- <ul class="row list-unstyled"> -->
+            <!-- <div class="row justify-content-center mt-5"> -->
               <!-- <a class="btn btn-primary" href="/feed">Return to Feed</a> -->
-            </div>  
-          </div> 
+            <!-- </div>   -->
+          <!-- </div>  -->
           
         </div>
      </div>

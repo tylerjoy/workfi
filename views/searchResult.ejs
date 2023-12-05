@@ -12,7 +12,7 @@
               <ul>
                 <li><strong>Location Quotient:</strong> <%= item.location_quotient %></li>
                 <!-- <li><strong>Postal Code:</strong> <%= item.postal_code %></li> -->
-                <li><strong>Two BR Rent:</strong> <%= rentPrice[dataFromApi.indexOf(item)] %></li>
+                <li><strong>Two BR Rent:</strong> $<%= rentPrice[dataFromApi.indexOf(item)] %></li>
               </ul>
             </li>
           </div>
@@ -21,8 +21,9 @@
     </div>
     <div class="flex items-center justify-content-center">
       <section class="m-auto items-center justify-content-center w-[70%]">
-        <a class="ml-32 btn btn-primary mb-10" href="/profile">New Search</a>
+        <a class="ml-28 btn btn-primary mb-10" href="/profile">New Search</a>
         <a href="https://services.onetcenter.org/" title="This site incorporates information from O*NET Web Services. Click to learn more."><img src="https://www.onetcenter.org/image/link/onet-in-it.svg" style="width: 130px; height: 60px; border: none" alt="O*NET in-it"></a>
+        
 
         <p class="whitespace-normal">
           This site incorporates information from 

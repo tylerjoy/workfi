@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const searchBox = document.getElementById('searchBox'); //search input takes in user text
     const autoCompleteResults = document.getElementById('autoCompleteResults'); //div that holds the autocomplete reccomendations
+    const submitButton = document.getElementById('submitButton')
 
     searchBox.addEventListener('input', function () {
         const searchTerm = searchBox.value; //take the value of the search input, this is triggered every time the user presses a key while the input box is active
@@ -18,9 +19,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     suggestion.addEventListener('click', function () {
                         searchBox.value = result;
                         autoCompleteResults.innerHTML = '';
+                        autoCompleteResults.classList.add('invisible')
+                        submitButton.classList.remove('hidden')
+
                     });
-                    autoCompleteResults.appendChild(suggestion);
+
+                    autoCompleteResults.appendChild(suggestion).classList.add('my-5');
                 });
+                autoCompleteResults.classList.remove('invisible')
+                autoCompleteResults.classList.add('visible')
             })
             .catch(error => console.error('Error fetching autocomplete suggestions:', error));
     });

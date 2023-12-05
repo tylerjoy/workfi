@@ -1157,6 +1157,10 @@ html {
   }
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .absolute {
   position: absolute;
 }
@@ -1231,6 +1235,10 @@ html {
   margin-top: 1.25rem;
 }
 
+.ml-28 {
+  margin-left: 7rem;
+}
+
 .flex {
   display: flex;
 }
@@ -1239,8 +1247,16 @@ html {
   display: grid;
 }
 
-.w-11\/12 {
-  width: 91.666667%;
+.hidden {
+  display: none;
+}
+
+.w-36 {
+  width: 9rem;
+}
+
+.w-5\/12 {
+  width: 41.666667%;
 }
 
 .w-\[33\%\] {
@@ -1316,6 +1332,16 @@ html {
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
+.border-gray-800 {
+  --tw-border-opacity: 1;
+  border-color: rgb(31 41 55 / var(--tw-border-opacity));
+}
+
+.border-gray-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
+}
+
 .bg-gray-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
@@ -1324,6 +1350,11 @@ html {
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-r {
@@ -1346,6 +1377,14 @@ html {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .px-1 {
@@ -1377,9 +1416,9 @@ html {
   line-height: 2rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-lg {
@@ -1405,10 +1444,6 @@ html {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.underline {
-  text-decoration-line: underline;
 }
 
 .shadow-md {

@@ -78,7 +78,8 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://workfi.up.railway.app/)
 
-<img src="/public/imgs/demo-2.png" alt="Logo" width="600" height="200">
+<img src="/public/imgs/workfi_search.png" alt="Logo" width="600" height="350">
+<img src="/public/imgs/workfi_results.png" alt="Logo" width="600" height="200">
 <!-- <img src="/public/imgs/demo-1.png" alt="Logo" width="600" height="350"> -->
 
 
@@ -158,14 +159,12 @@ USAGE EXAMPLES
 
 <!-- ROADMAP -->
 ## Roadmap
-- [x] Pagnate API response to three until search times improve (currently 2 second wait time per state resulting in 20+ second wait times for large return object)
-- [x] Fix issue with API failure in production environment (working on local server)
-- [x] Host website
-- [x] Add ciitation / credit to ONET per licensing requirements
+
 - [ ] Increase search times by adding 'local' database storage models for state-specific rent data
 - [ ] Implement feature to save users seaches upon post request (button click)
 - [ ] Refactor autocomplete feature to query from mongoDB
 - [ ] Handle US terriroties (rent pricing unavail in HUD API)
+
 
 
 See the [open issues](https://github.com/tylerjoy/workfi/issues) for a full list of proposed features (and known issues).

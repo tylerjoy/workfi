@@ -160,11 +160,12 @@ USAGE EXAMPLES
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Increase search times by adding local database storage models for state-specific rent data
+- [ ] Integreate back-end functionality with new state model to increase response times. Measure increase, previously 2 seconds per API call
 - [ ] Refactor autocomplete feature to query from mongoDB
 - [ ] Implement feature to save users seaches upon post request (button click)
 - [ ] Edge-Case: Handle US terriroties (rent pricing unavail in HUD API)
 - [X] Research outdoor recreational accessability metrics and create rankings for state model
+- [X] Add local database storage models for state-specific rent data
 
 
 

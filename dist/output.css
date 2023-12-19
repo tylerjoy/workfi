@@ -1267,6 +1267,10 @@ html {
   width: 100%;
 }
 
+.w-\[40\%\] {
+  width: 40%;
+}
+
 .max-w-sm {
   max-width: 24rem;
 }
@@ -1442,4 +1446,22 @@ html {
 
 .hover\:to-yellow-500:hover {
   --tw-gradient-to: #eab308 var(--tw-gradient-to-position);
+}
+
+@media (max-width: 1250px) {
+  .max-\[1250px\]\:w-\[66\%\] {
+    width: 66%;
+  }
+}
+
+@media (max-width: 700px) {
+  .max-\[700px\]\:hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1250px) {
+  .min-\[1250px\]\:w-\[66\%\] {
+    width: 66%;
+  }
 }

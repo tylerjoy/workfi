@@ -1,6 +1,6 @@
 <%- include('partials/headerSignedIn') -%>
 <main class="my-5 flex items-center justify-center">
-  <div class="my-5 bg-gray-800 p-8 rounded-lg shadow-md w-[33%]">
+  <div class="my-5 bg-gray-800 p-8 rounded-lg shadow-md w-[40%] max-[1250px]:w-[66%] ">
     <div class="grid text-center">
       <h4 class="text-white text-2xl mb-5">States ranked by popularity for<br> <%= jobTitle %></h4>
       <p class="text-white text-lg mb-5">Number of jobs is determined by Location Quotient. <br> <a href="https://www.bea.gov/help/faq/478"><strong>Click here</strong> for more info on Location Quotients</a></p>
@@ -20,9 +20,10 @@
       </ul>
     </div>
     <div class="flex items-center justify-content-center">
-      <section class="m-auto items-center justify-content-center w-[70%]">
-        <a class="ml-28 btn btn-primary mb-10" href="/profile">New Search</a>
-        <a href="https://services.onetcenter.org/" title="This site incorporates information from O*NET Web Services. Click to learn more."><img src="https://www.onetcenter.org/image/link/onet-in-it.svg" style="width: 130px; height: 60px; border: none" alt="O*NET in-it"></a>
+      <section class="m-auto items-center justify-content-center text-center">
+        <a class="btn btn-primary mb-10 justify-content-center items-center" href="/profile">New Search</a>
+
+        <a href="https://services.onetcenter.org/" title="This site incorporates information from O*NET Web Services. Click to learn more."><img class="m-auto" src="https://www.onetcenter.org/image/link/onet-in-it.svg" style="width: 130px; height: 60px; border: none" alt="O*NET in-it"></a>
         
 
         <p class="whitespace-normal">

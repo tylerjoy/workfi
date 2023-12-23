@@ -1,4 +1,5 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+
 <a name="readme-top"></a>
 
 <!-- PROJECT SHIELDS -->
@@ -16,8 +17,6 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -42,8 +41,6 @@
     <a href="https://github.com/tylerjoy/workfi/issues">Request Feature</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -71,9 +68,8 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://workfi.up.railway.app/)
@@ -82,13 +78,9 @@
 <img src="/public/imgs/workfi_results.png" alt="Logo" width="600" height="400">
 <!-- <img src="/public/imgs/demo-1.png" alt="Logo" width="600" height="350"> -->
 
-
-
 <!-- Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description` -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ### Built With
 
@@ -103,9 +95,7 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
-
-
-<!-- GETTING STARTED 
+<!-- GETTING STARTED
 ## Getting Started
 
 To get a local copy up and running follow these steps.
@@ -114,7 +104,8 @@ To get a local copy up and running follow these steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+
+- npm
   ```sh
   npm install npm@latest -g
   ```
@@ -133,7 +124,7 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-<!-- 5. Enter your API keys in `config.js` -->
+   <!-- 5. Enter your API keys in `config.js` -->
 5. Create a `.env`in config folder and add the folxlowing as `key = value`
    ```js
    . PORT = 5000(can be any unused port)
@@ -144,37 +135,34 @@ This is an example of how to list things you need to use the software and how to
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 USAGE EXAMPLES
+
 ## Usage
-
-
 
 <!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- ROADMAP -->
+
 ## Roadmap
 
 - [ ] Integreate back-end functionality with new state model to increase response times. Measure increase, previously 2 seconds per API call
-- [ ] Refactor autocomplete feature to query from mongoDB
+- [ ] Refactor autocomplete feature
+- [ ] Add related job types and batch into applicable codes for API calls
 - [ ] Implement feature to save users seaches upon post request (button click)
 - [ ] Edge-Case: Handle US terriroties (rent pricing unavail in HUD API)
-- [X] Research outdoor recreational accessability metrics and create rankings for state model
-- [X] Add local database storage models for state-specific rent data
-
-
+- [ ] Add metrics and high level information on home page for new users
+- [ ] Add search examples under search bar for new users
+- [x] Research outdoor recreational accessability metrics and create rankings for state model
+- [x] Add local database storage models for state-specific rent data
 
 See the [open issues](https://github.com/tylerjoy/workfi/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -190,8 +178,6 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- LICENSE -->
 <!-- ## License
 
@@ -200,31 +186,29 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
  -->
 
-
 <!-- CONTACT -->
+
 ## Contact
 
-Your Name - [@__tylerJS__](https://twitter.com/__tylerJS__) - mrjoy206@gmail.com
+Your Name - [@**tylerJS**](https://twitter.com/__tylerJS__) - mrjoy206@gmail.com
 
 Project Link: [https://github.com/tylerjoy/workfi](https://github.com/tylerjoy/workfi)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- ACKNOWLEDGMENTS -->
+
 ## Acknowledgments
 
-* ONET and HUD for the amazing data
-* 100Devs community for the support
+- ONET and HUD for the amazing data
+- 100Devs community for the support
 <!-- * []() -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/tylerjoy/workfi.svg?style=for-the-badge
 [contributors-url]: https://github.com/tylerjoy/workfi/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/tylerjoy/workfi.svg?style=for-the-badge
@@ -253,5 +237,4 @@ Project Link: [https://github.com/tylerjoy/workfi](https://github.com/tylerjoy/w
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
-
+[JQuery-url]: https://jquery.com

@@ -1,3 +1,6 @@
+//NOT CURRENTLY BEING USED
+//FIXME, save the user searched to the database
+
 const mongoose = require("mongoose");
 
 const SearchSchema = new mongoose.Schema({
@@ -22,15 +25,13 @@ const SearchSchema = new mongoose.Schema({
       postal_code: String,
       location_quotient: Number,
       name: String,
-    }
+    },
   ],
   // searchResult:{
   //   type: Array,
-  // } 
+  // }
 });
 
+const Search = mongoose.model("Search", SearchSchema);
 
-const Search = mongoose.model("Search", SearchSchema)
-
-module.exports = Search
-
+module.exports = Search;

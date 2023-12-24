@@ -148,12 +148,14 @@ USAGE EXAMPLES
 ## Roadmap
 
 - [ ] Integreate back-end functionality with new state model to increase response times. Measure increase, previously 2 seconds per API call
-- [ ] Refactor autocomplete feature
-- [ ] Add related job types and batch into applicable codes for API calls
+- [ ] Add state abbreviations to search results. Folx not familiar with state names may benefit from state codes
+- [ ] Refactor autocomplete feature. Add related job types and batch into applicable codes for API calls
 - [ ] Implement feature to save users seaches upon post request (button click)
 - [ ] Edge-Case: Handle US terriroties (rent pricing unavail in HUD API)
 - [ ] Add metrics and high level information on home page for new users
 - [ ] Add search examples under search bar for new users
+- [ ] Implement a 'more' button to show the user 5 mproe search results
+- [ ] Add user preference for how many more results 'more' button returns
 - [x] Research outdoor recreational accessability metrics and create rankings for state model
 - [x] Add local database storage models for state-specific rent data
 

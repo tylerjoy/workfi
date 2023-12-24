@@ -9,7 +9,8 @@ const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
-const searchRoutes = require("./routes/search")
+const searchRoutes = require("./routes/search");
+const reload = require("reload");
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -25,7 +26,7 @@ app.set("view engine", "ejs");
 
 //Static Folder
 app.use(express.static("public"));
-app.use("/css", express.static("dist"))
+app.use("/css", express.static("dist"));
 
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));
@@ -62,3 +63,5 @@ app.use("/search", searchRoutes);
 app.listen(process.env.PORT || PORT, () => {
   console.log("Server is running, you better catch it!");
 });
+
+reload(app);

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "concurrently \"nodemon server.js\" \"npx tailwindcss -i ./public/css/style.css -o ./dist/output.css --watch\""
+    "watch": "concurrently \"nodemon server.js \"-e html,js,css \"npx tailwindcss -i ./public/css/style.css -o ./dist/output.css --watch\""
   },
   "author": "",
   "license": "MIT",
@@ -31,6 +31,7 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "postcss": "^8.4.32",
+    "reload": "^3.2.1",
     "validator": "^13.6.0"
   },
   "devDependencies": {

@@ -1,10 +1,8 @@
-//Models are large and have been placed under the functions for readibility.
-
 require("dotenv").config({ path: "./config/.env" });
 const axios = require("axios");
 
 function findJobCode(searchTerm) {
-  // Request to GET the search result. Step 1,lookup jobCode from the jobs object
+  // Assuming jobs is a global variable or accessible in this scope
   const job = jobs.find((job) => job.jobtitle === searchTerm);
   if (job) {
     console.log(job.jobcode);
@@ -34,6 +32,9 @@ async function searchJobs(jobCode) {
     //only above-average states
     // console.log(JSON.stringify(response.data.above_average.state, null, 2));
     // return JSON.stringify(response.data, null, 2)
+    console.log(
+      `$SEARCHJOBS RESPONSE=====>${JSON.stringify(response.data, null, 2)}`
+    );
     return response.data;
   } catch (error) {
     // Handle errors, if any
@@ -41,69 +42,10 @@ async function searchJobs(jobCode) {
   }
 }
 
-async function getRentData(arr) {
-  const rentApiToken = process.env.RENT_API_TOKEN;
-  const fetchData = async (v) => {
-    try {
-      const apiEndpoint = `https://www.huduser.gov/hudapi/public/fmr/statedata/${v}`;
-      const headers = {
-        Authorization: `Bearer ${rentApiToken}`,
-      };
-
-      // Make a GET request to the API endpoint with the specified headers
-      const response = await axios.get(apiEndpoint, { headers });
-
-      // Log the response for debugging
-      // console.log(`RESPONSE FOR ${v}:=============>`, response.data);
-      console.log(`ARR = ${arr}:=============>`);
-
-      // Return the data from the API response
-      return response.data;
-    } catch (error) {
-      // Handle errors, if any
-      console.error(
-        `Error fetching data for ${v} from the API =============>:`,
-        error.message
-      );
-
-      // Return a default or placeholder value if needed
-      return null;
-    }
-  };
-
-  try {
-    // Use Promise.all to wait for all the async calls to complete
-    const resolvedValues = [];
-
-    //FIXME: pagnated rent search retults to first three returned stated until rent search is optimized
-    for (const v of arr.slice(0, 3)) {
-      await new Promise((resolve) => setTimeout(resolve, 500));
-      const data = await fetchData(v);
-      resolvedValues.push(data);
-    }
-
-    // for (const v of arr) {
-    //   await new Promise((resolve) => setTimeout(resolve, 500))
-    //   const data = await fetchData(v);
-    //   resolvedValues.push(data)
-    // }
-
-    // // Output the results
-    // resolvedValues.forEach((value) => {
-    //   console.log(JSON.stringify(value));
-    // });
-
-    return resolvedValues.filter((value) => value !== null); // Return the data if needed, filtering out null values
-  } catch (error) {
-    // Handle errors from Promise.all
-    console.error("Error in Promise.all:", error.message);
-  }
-}
-
 // async function getRentData(arr) {
 
 //   const rentApiToken = process.env.RENT_API_TOKEN;
-// ` `
+
 //   const fetchData = async (v) => {
 //     try {
 //       const apiEndpoint = `https://www.huduser.gov/hudapi/public/fmr/statedata/${v}`;
@@ -160,7 +102,7 @@ async function getRentData(arr) {
 module.exports = {
   findJobCode,
   searchJobs,
-  getRentData,
+  // getRentData,
 };
 
 const jobs = [
@@ -4214,7 +4156,7 @@ const jobs = [
     jobcode: "51-8031.00",
   },
   {
-    jobtitle: "Water Resource Specialists",
+    jobtitle: "Water Resource Specialissts",
     jobcode: "11-9121.02",
   },
   {

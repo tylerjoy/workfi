@@ -14,61 +14,58 @@ module.exports = {
       console.log(err);
     }
   },
-  // FIXME: API call to HUD takes too long, 7.5 seconds per 3 states. Add local data models and measure speed increase: [***enter here***]
   getJobData: async (req, res) => {
     try {
       const searchTerm = req.query.search;
       const jobCode = searchMiddleware.findJobCode(searchTerm);
-      //FIXME return whole list of states with location quotients, then assign ranking # (out of num states ,
-      //State: WA
-      // Industry Specialization: 1 / 50  )
-      //
-      //
-      //
-      //
 
-      // FIXME: categorize above average, and then the rest, pagnate the rest by by 5 - 10 more search results if user clicks 'show more rankings for this search'
-      //Rewuires many resources, long term project: let user select how many add'l search results are returned on button click
       searchMiddleware.searchJobs(jobCode).then(async (result) => {
         let aboveAvgStates = result.above_average.state;
-        //FIXME hosted app says result.above_average.state is undefined - done
+        //FIXME hosted app says result.above_average.state is undefined
         let statesToRentArr = aboveAvgStates.map((state) => state.postal_code);
 
-        let twoBrRentByState = await searchMiddleware
-          .getRentData(statesToRentArr)
-          .then((data) => {
-            const stringData = JSON.stringify(data).replaceAll("-", "_");
-            const obj = JSON.parse(stringData);
-            console.log(
-              `RETURNED OBJ TO BE PARSED INTO RENT=========>${JSON.parse(
-                stringData
-              )}`
-            );
+        let newTwoBrRentByState = await Promise.all(
+          statesToRentArr.map(async (elem) => {
+            try {
+              const state = await State.findOne({ stateCode: elem });
+              if (state && state.avgTwoBrMetroRent) {
+                return state.avgTwoBrMetroRent.toLocaleString("en");
+              } else {
+                console.log(
+                  `Warning: No rental data found for stateCode${elem}`
+                );
+                return null;
+              }
+            } catch (error) {
+              console.error("Error", error.message);
+            }
+          })
+        );
 
-            let twoBrRentByState = [];
+        let stateOutdoorRank = await Promise.all(
+          statesToRentArr.map(async (elem) => {
+            try {
+              const state = await State.findOne({ stateCode: elem });
+              if (state && state.outdoorRank) {
+                return state.outdoorRank;
+              } else {
+                console.log(
+                  `Warning: No outdoor recreation data found for stateCode${elem}`
+                );
+                return null;
+              }
+            } catch (error) {
+              console.error("Error", error.message);
+            }
+          })
+        );
 
-            obj.forEach((state) => {
-              let totalTwoBedroomCost = 0;
-              let totalMetroAreas = 0;
-
-              state.data.metroareas.forEach((metro) => {
-                totalTwoBedroomCost += metro.Two_Bedroom;
-                totalMetroAreas += 1;
-              });
-
-              const averageTwoBedroomCost =
-                totalTwoBedroomCost / totalMetroAreas;
-              twoBrRentByState.push(Math.floor(averageTwoBedroomCost));
-            });
-
-            return twoBrRentByState;
-          });
-
-        console.log("ARRAY TO RENDER========>", twoBrRentByState);
+        // console.log("NEWNEW ARRAY TO RENDER========>", newTwoBrRentByState);
 
         res.render("searchResult.ejs", {
           dataFromApi: result.above_average.state,
-          rentPrice: twoBrRentByState,
+          rentPrice: newTwoBrRentByState,
+          outdoorRank: stateOutdoorRank,
           user: req.user,
           jobTitle: searchTerm,
         });

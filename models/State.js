@@ -19,24 +19,21 @@ const StateSchema = new mongoose.Schema({
   },
 });
 
-StateSchema.getRentFromDb = async function getRentData(arr) {
+StateSchema.methods.getRentFromDb = async function getRentData(arr) {
   try {
     const resolvedValues = [];
     // Log the response for debugging
     for (const v of arr.slice(0, 5)) {
-      const data = await this.findOne({ stateCode: v });
+      const data = await this.findOne({ stateCode: v, avgTwoBrMetroRent });
     }
 
-    console.log(`RESPONSE FOR ${v}:=============>`, response.data);
+    //push the rent data for the states to the resolved values array
+    return resolvedValues.filter((value) => value !== null);
 
-    // Return the data from the API response
-    return response.data;
+    // console.log(`RESPONSE FOR ${v}:=============>`, response.data);
   } catch (error) {
     // Handle errors, if any
-    console.error(
-      `Error fetching data for ${v} from the API =============>:`,
-      error.message
-    );
+    console.error(`Error fetching rent data from the database`, error.message);
 
     // Return a default or placeholder value if needed
     return null;

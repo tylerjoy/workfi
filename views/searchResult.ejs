@@ -29,6 +29,8 @@
                 <strong>Two BR Rent:</strong> $<%=
                 rentPrice[dataFromApi.indexOf(item)] %>
               </li>
+              <strong>Outdoor Recreation Score:</strong>
+              <%= outdoorRank[dataFromApi.indexOf(item)] %>
             </ul>
           </li>
         </div>
@@ -76,5 +78,4 @@
 
 <script src="/script.js"></script>
 <script src="/reload/reload.js"></script>
-
 <%- include('partials/footer') -%>

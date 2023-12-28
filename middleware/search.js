@@ -35,6 +35,7 @@ async function searchJobs(jobCode) {
     console.log(
       `$SEARCHJOBS RESPONSE=====>${JSON.stringify(response.data, null, 2)}`
     );
+
     return response.data;
   } catch (error) {
     // Handle errors, if any

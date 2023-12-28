@@ -20,12 +20,42 @@ module.exports = {
       const jobCode = searchMiddleware.findJobCode(searchTerm);
 
       searchMiddleware.searchJobs(jobCode).then(async (result) => {
-        let aboveAvgStates = result.above_average.state;
+        let states = result;
+        // console.log(states);
+        const territoriesToExclude = ["AS", "PR", "VI", "GU", "MP"];
+        let aboveAvgStates = result.above_average.state.filter(
+          (state) => !territoriesToExclude.includes(state.postal_code)
+        );
+
+        let avgStates = result.average.state.filter(
+          (state) => !territoriesToExclude.includes(state.postal_code)
+        );
+        let belowAvgStates = result.below_average.state.filter(
+          (state) => !territoriesToExclude.includes(state.postal_code)
+        );
+
+        // console.log(territoryCheck);
+
+        // let allStates = aboveAvgStates + avgStates + belowAvgStates;
+        // allStates.forEach((state) => console.log(state));
+        // console.log(JSON.stringify(allStates));
+
         //FIXME hosted app says result.above_average.state is undefined
-        let statesToRentArr = aboveAvgStates.map((state) => state.postal_code);
+        let allStatesArr = [
+          aboveAvgStates.map((state) => state.postal_code),
+          avgStates.map((state) => state.postal_code),
+          belowAvgStates.map((state) => state.postal_code),
+        ];
+
+        let finalArr = [].concat.apply([], allStatesArr);
+
+        console.log(finalArr);
+
+        // let statesToRentArr;
+        // console.log(statesToRentArr);
 
         let newTwoBrRentByState = await Promise.all(
-          statesToRentArr.map(async (elem) => {
+          finalArr.map(async (elem) => {
             try {
               const state = await State.findOne({ stateCode: elem });
               if (state && state.avgTwoBrMetroRent) {
@@ -43,7 +73,7 @@ module.exports = {
         );
 
         let stateOutdoorRank = await Promise.all(
-          statesToRentArr.map(async (elem) => {
+          finalArr.map(async (elem) => {
             try {
               const state = await State.findOne({ stateCode: elem });
               if (state && state.outdoorRank) {
@@ -63,7 +93,9 @@ module.exports = {
         // console.log("NEWNEW ARRAY TO RENDER========>", newTwoBrRentByState);
 
         res.render("searchResult.ejs", {
-          dataFromApi: result.above_average.state,
+          aboveAvgStates: aboveAvgStates,
+          avgStates: avgStates,
+          belowAvgStates: belowAvgStates,
           rentPrice: newTwoBrRentByState,
           outdoorRank: stateOutdoorRank,
           user: req.user,

@@ -15,7 +15,7 @@
         >
       </p>
       <ul class="grid text-gray-900 items-center border-separate">
-        <% dataFromApi.forEach(item => { %>
+        <% aboveAvgStates.forEach(item => { %>
         <div class="mb-5 bg-gray-400 rounded-lg border-2 border-gray-600">
           <li class="my-5">
             <%= item.name %>
@@ -27,10 +27,48 @@
               <!-- <li><strong>Postal Code:</strong> <%= item.postal_code %></li> -->
               <li>
                 <strong>Two BR Rent:</strong> $<%=
-                rentPrice[dataFromApi.indexOf(item)] %>
+                rentPrice[aboveAvgStates.indexOf(item)] %>
               </li>
               <strong>Outdoor Recreation Score:</strong>
-              <%= outdoorRank[dataFromApi.indexOf(item)] %>
+              <%= outdoorRank[aboveAvgStates.indexOf(item)] %>
+            </ul>
+          </li>
+        </div>
+        <% }) %> <% avgStates.forEach(item => { %>
+        <div class="mb-5 bg-gray-400 rounded-lg border-2 border-gray-600">
+          <li class="my-5">
+            <%= item.name %>
+            <ul>
+              <li>
+                <strong>Location Quotient:</strong> <%= item.location_quotient
+                %>
+              </li>
+              <!-- <li><strong>Postal Code:</strong> <%= item.postal_code %></li> -->
+              <li>
+                <strong>Two BR Rent:</strong> $<%=
+                rentPrice[avgStates.indexOf(item)] %>
+              </li>
+              <strong>Outdoor Recreation Score:</strong>
+              <%= outdoorRank[avgStates.indexOf(item)] %>
+            </ul>
+          </li>
+        </div>
+        <% }) %> <% belowAvgStates.forEach(item => { %>
+        <div class="mb-5 bg-gray-400 rounded-lg border-2 border-gray-600">
+          <li class="my-5">
+            <%= item.name %>
+            <ul>
+              <li>
+                <strong>Location Quotient:</strong> <%= item.location_quotient
+                %>
+              </li>
+              <!-- <li><strong>Postal Code:</strong> <%= item.postal_code %></li> -->
+              <li>
+                <strong>Two BR Rent:</strong> $<%=
+                rentPrice[belowAvgStates.indexOf(item)] %>
+              </li>
+              <strong>Outdoor Recreation Score:</strong>
+              <%= outdoorRank[belowAvgStates.indexOf(item)] %>
             </ul>
           </li>
         </div>
